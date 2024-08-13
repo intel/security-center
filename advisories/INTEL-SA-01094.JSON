@@ -1,0 +1,110 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01094",
+			"initial_release_date": "2024-08-13T00:00:00+00:00",
+			"current_release_date": "2024-08-13T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2024-08-13T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® Data Center GPU Max Series Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01094.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "A potential security vulnerability in some Intel® Data Center GPU Max Series 1100 and 1550 products may allow denial of service. Intel is releasing prescriptive guidance to address this potential vulnerability."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends users follow existing security best practices and alternate security controls, including:Intel® Data Center GPU Max Series 1100 and 1550 Intel(r) Data Center GPU Max Configuration Recommendation."
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "Medium"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Hardware"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Denial of Service"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"This issue was found internally by Intel employees. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2024-24580",
+			"title": "Improper conditions check in some Intel® Data Center GPU Max Series 1100 and 1550 products may allow a privileged user to potentially enable denial of service via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+						"baseScore": 6.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 6.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
