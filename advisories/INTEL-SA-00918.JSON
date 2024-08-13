@@ -1,0 +1,334 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-00918",
+			"initial_release_date": "2024-08-13T00:00:00+00:00",
+			"current_release_date": "2024-08-13T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2024-08-13T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® Ethernet Controllers and Adapters Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00918.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "Potential security vulnerabilities in some Intel® Ethernet Controllers and Adapters may allow escalation of privilege or denial of service.  Intel is releasing firmware and software updates to mitigate these potential vulnerabilities."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends updating the software for impacted Intel® Ethernet Controllers and Adapters to the versions provided below or later.\r\n \r\nUpdate to Intel® Ethernet Complete Driver Pack versions 28.3 or later.\r\nIntel® Ethernet Controllers E800 Series with NVM image versions 4.4 or higher included with Intel® Ethernet Adapter Complete Driver Pack versions 28.3 or higher. \r\nIntel recommends updating the firmware for impacted Intel® Ethernet Controllers and Adapters to the versions provided below or later.\r\nUpdate firmware to NIC1.3 PV, NVM image version 3.36 or higher included Intel(R) Ethernet Complete Driver Pack versions 28.3 or later.\r\nUpdates are available for download at this location:  Intel® Ethernet Adapter Complete Driver Pack"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "High"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Firmware,software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege, Denial of Service"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"The following issues were found internally by Intel employees: CVE-2024-23981, CVE-2024-21810, CVE-2024-21807, CVE-2024-23497, CVE-and 2024-24986. Intel would like to thank Daniel Medina Velazquez and Thierry Fernandes Faria. \r\nThe following issues were found internally by Intel employees: CVE-2024-21806, CVE-2024-23499 and CVE-2024-24983. \r\nIntel would like to thank mohammed for reporting CVE-2024-21769. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2024-21810",
+			"title": "Improper input validation in the Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters before version 28.3 may allow an authenticated user to potentially enable escalation of privilege via local access. ",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.3,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-23497",
+			"title": "Out-of-bounds write in Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters before version 28.3 may allow an authenticated user to potentially enable escalation of privilege via local access. ",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.3,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-24983",
+			"title": "Protection mechanism failure in firmware for some Intel® Ethernet Network Controllers and Adapters E810 Series before version 4.4 may allow an unauthenticated user to potentially enable denial of service via network access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+						"baseScore": 6.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:H/SA:H",
+						"baseScore": 7,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-21807",
+			"title": "Improper initialization in the Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters before version 28.3 may allow an authenticated user to potentially enable escalation of privilege via local access. ",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.3,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-23981",
+			"title": "Wrap-around error in Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters before version 28.3 may allow an authenticated user to potentially enable escalation of privilege via local access. ",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.3,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-23499",
+			"title": "Protection mechanism failure in Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters E810 Series before version 28.3 may allow an unauthenticated user to potentially enable denial of service via network access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+						"baseScore": 6.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:H/SA:H",
+						"baseScore": 7,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-21769",
+			"title": " Uncontrolled search path in some Intel® Ethernet Connection I219-LM install software may allow an authenticated user to potentially enable escalation of privilege via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.4,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-24986",
+			"title": "Improper access control in Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters before version 28.3 may allow an authenticated user to potentially enable escalation of privilege via local access. ",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.3,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2024-21806",
+			"title": "Improper conditions check in Linux kernel mode driver for some Intel® Ethernet Network Controllers and Adapters E810 Series before version 28.3 may allow an authenticated user to potentially enable denial of service via local access. ",
+			"scores": [
+				{
+					"cvss_v3": {
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+						"baseScore": 5.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 6.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
