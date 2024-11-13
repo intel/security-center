@@ -1,0 +1,139 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01191",
+			"initial_release_date": "2024-11-12T00:00:00+00:00",
+			"current_release_date": "2024-11-12T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2024-11-12T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® Graphics Driver Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01191.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "A potential security vulnerability in the Intel® Graphics Driver installers for versions 15.40 and 15.45 may allow escalation of privilege.  Intel is not releasing updates to mitigate this potential vulnerability and has issued a product discontinuation notice for the Intel® Graphics Drivers for versions 15.40 and 15.45."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel has issued a product discontinuation notice for Intel® Graphics Drivers for versions 15.40 and 15.45.  As of June 15, 2024, the Intel® Graphics Drivers for versions 15.40 and 15.45 are not supported with any additional functional, security, or other updates. Intel recommends that users of the Intel® Graphics Drivers for versions 15.40 and 15.45 uninstall it or discontinue use as soon as possible.\r\n \r\nProduct discontinuation notices\r\nhttps://www.intel.com/content/www/us/en/download/18563/intel-graphics-driver-for-windows-7-8-1-15-40-6th-gen.html\r\nIntel® Graphics Driver for Windows® 7 &amp; 8.1* [15.40 6th Gen]\r\nThis download installs the Intel® Graphics Driver for 6th Gen.\r\n \r\nhttps://www.intel.com/content/www/us/en/download/18799/intel-graphics-driver-for-windows-15-45.html\r\nIntel® Graphics Driver for Windows* [15.45]\r\nThis download installs the Intel® Graphics Driver for 6th Gen on Windows 7* and Windows 8.1*/10* 64-bit.\r\n \r\nhttps://www.intel.com/content/www/us/en/download/18388/intel-graphics-driver-for-windows-10-15-40-4th-gen.html\r\nIntel® Graphics Driver for Windows® 10 [15.40][4th Gen]\r\nThis download installs version 15.40.7.64.4279 of the Intel® Graphics Driver for Windows® 10, 64-bit."
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "Medium"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"Intel would like to thank Marius Gabriel Mihai for reporting this issue. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2024-38387",
+			"cwe": {
+				"id": "CWE-427",
+				"name": "Uncontrolled Search Path Element"
+			},
+			"title": "Uncontrolled search path in the Intel® Graphics Driver installers for versions 15.40 and 15.45 may allow an authenticated user to potentially enable escalation of privilege via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "ACTIVE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.4,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
