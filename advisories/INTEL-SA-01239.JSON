@@ -1,0 +1,953 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01239",
+			"initial_release_date": "2025-05-13T00:00:00+00:00",
+			"current_release_date": "2025-05-13T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2025-05-13T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Edge Orchestrator for Intel® Tiber™ Edge Platform Security Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01239.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "Potential security vulnerabilities for some Edge Orchestrator software in the Intel® Tiber™ Edge Platform may allow escalation of privilege, denial of service or information disclosure. Intel is releasing software updates to mitigate these potential vulnerabilities."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends updating Edge Orchestrator software to version 24.11 or later for Intel® Tiber™ Edge Platform for AWS.\r\nUpdates are available for download at this location:\r\nhttps://edc.intel.com/content/www/us/en/secure/design/confidential/tools/edge-orchestrator-aws-deployment-guide/\r\n \r\nIntel recommends updating Edge Orchestrator software on-prem to version 24.11 or later for Intel® Tiber™ Edge Platform.\r\nUpdates are available for download at this location:\r\nhttps://edc.intel.com/content/www/us/en/secure/design/confidential/tools/edge-orchestrator-on-prem-deployment-guide/"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "High"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege, Denial of Service, Information Disclosure"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"These issues were found internally by Intel employees. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2025-22895",
+			"cwe": {
+				"id": "CWE-200",
+				"name": "Exposure of Sensitive Information to an Unauthorized Actor"
+			},
+			"title": "Exposure of sensitive information to an unauthorized actor for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable information disclosure via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 5.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:H/SI:N/SA:N",
+						"baseScore": 6,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20022",
+			"cwe": {
+				"id": "CWE-691",
+				"name": "Insufficient Control Flow Management"
+			},
+			"title": "Insufficient control flow management for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow a privileged user to potentially enable information disclosure via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:H",
+						"baseScore": 5.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:H/AT:P/PR:H/UI:N/VC:H/VI:N/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-22844",
+			"cwe": {
+				"id": "CWE-284",
+				"name": "Improper Access Control"
+			},
+			"title": "Improper access control for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an unauthenticated user to potentially enable information disclosure via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+						"baseScore": 4.3,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "LOW",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N",
+						"baseScore": 5.3,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20624",
+			"cwe": {
+				"id": "CWE-200",
+				"name": "Exposure of Sensitive Information to an Unauthorized Actor"
+			},
+			"title": "Exposure of sensitive information to an unauthorized actor for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable information disclosure via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 5.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6.9,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-22848",
+			"cwe": {
+				"id": "CWE-754",
+				"name": "Improper conditions check"
+			},
+			"title": "Improper conditions check for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable denial of service via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+						"baseScore": 3.5,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "LOW",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:L",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20616",
+			"cwe": {
+				"id": "CWE-400",
+				"name": "Uncontrolled Resource Consumption"
+			},
+			"title": "Uncontrolled resource consumption for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable escalation of privilege via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+						"baseScore": 5.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "LOW",
+						"subIntegrityImpact": "LOW",
+						"subAvailabilityImpact": "LOW",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:L/SC:L/SI:L/SA:L",
+						"baseScore": 2.1,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20076",
+			"cwe": {
+				"id": "CWE-284",
+				"name": "Improper Access Control"
+			},
+			"title": "Improper access control for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an unauthenticated user to potentially enable escalation of privilege via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+						"baseScore": 5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "PASSIVE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:H/AT:N/PR:N/UI:P/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 2.1,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-22446",
+			"cwe": {
+				"id": "CWE-326",
+				"name": "Inadequate Encryption Strength"
+			},
+			"title": "Inadequate encryption strength for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable escalation of privilege via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+						"baseScore": 4.6,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "LOW",
+						"subIntegrityImpact": "LOW",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20612",
+			"cwe": {
+				"id": "CWE-279",
+				"name": "Incorrect Execution-Assigned Permissions"
+			},
+			"title": "Incorrect execution-assigned permissions for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable escalation of privilege via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+						"baseScore": 5.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20030",
+			"cwe": {
+				"id": "CWE-200",
+				"name": "Exposure of Sensitive Information to an Unauthorized Actor"
+			},
+			"title": "Exposure of sensitive information to an unauthorized actor for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable information disclosure via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+						"baseScore": 2.6,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:H/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 2.1,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20611",
+			"cwe": {
+				"id": "CWE-200",
+				"name": "Exposure of Sensitive Information to an Unauthorized Actor"
+			},
+			"title": "Exposure of sensitive information to an unauthorized actor for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable information disclosure via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 4.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 5.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20057",
+			"cwe": {
+				"id": "CWE-400",
+				"name": "Uncontrolled Resource Consumption"
+			},
+			"title": "Uncontrolled resource consumption for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable denial of service via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+						"baseScore": 3.5,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20084",
+			"cwe": {
+				"id": "CWE-400",
+				"name": "Uncontrolled Resource Consumption"
+			},
+			"title": "Uncontrolled resource consumption for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable denial of service via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+						"baseScore": 3.5,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-23233",
+			"cwe": {
+				"id": "CWE-279",
+				"name": "Incorrect Execution-Assigned Permissions"
+			},
+			"title": "Incorrect execution-assigned permissions for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable escalation of privilege via adjacent access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+						"baseScore": 3.5,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "LOW",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20013",
+			"cwe": {
+				"id": "CWE-200",
+				"name": "Exposure of Sensitive Information to an Unauthorized Actor"
+			},
+			"title": "Exposure of sensitive information to an unauthorized actor for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable information disclosure via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 5.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "LOW",
+						"subIntegrityImpact": "LOW",
+						"subAvailabilityImpact": "LOW",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:L/SI:L/SA:L",
+						"baseScore": 4.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-22843",
+			"cwe": {
+				"id": "CWE-279",
+				"name": "Incorrect Execution-Assigned Permissions"
+			},
+			"title": "Incorrect execution-assigned permissions for some Edge Orchestrator software before version 24.08 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable escalation of privilege via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H",
+						"baseScore": 7.8,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "HIGH",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-21081",
+			"cwe": {
+				"id": "CWE-693",
+				"name": "Protection Mechanism Failure"
+			},
+			"title": "Protection mechanism failure for some Edge Orchestrator software before version 24.11 for Intel® Tiber™ Edge Platform may allow an authenticated user to potentially enable escalation of privilege via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "LOW",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+						"baseScore": 4.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 2,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
