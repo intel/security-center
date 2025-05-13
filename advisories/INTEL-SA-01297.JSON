@@ -1,0 +1,190 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01297",
+			"initial_release_date": "2025-05-13T00:00:00+00:00",
+			"current_release_date": "2025-05-13T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2025-05-13T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® Simics® Package Manager Software Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01297.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "Potential security vulnerabilities in some Intel® Simics® Package Manager software may allow escalation of privilege or denial of service. Intel is releasing software updates to mitigate these potential vulnerabilities."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends that users of Intel® Simics® Package Manager software update to 1.12.0 or later.\r\nUpdates are available for download at this location:\r\nhttps://lemcenter.intel.com/productDownload/?Product&#61;256660e5-a404-4390-b436-f64324d94959"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "High"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege, Denial of Service"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"Intel would like to thank Aobo Wang of Chaitin Security Research Lab (CVE-2025-20008) and &#64;sim0nsecurity (CVE-2025-22448) for reporting these issues. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2025-20008",
+			"cwe": {
+				"id": "CWE-277",
+				"name": "Insecure Inherited Permissions"
+			},
+			"title": "Insecure inherited permissions for some Intel® Simics® Package Manager software before version 1.12.0 may allow a privileged user to potentially enable escalation of privilege via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "REQUIRED",
+						"scope": "CHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:C/C:H/I:H/A:H",
+						"baseScore": 7.7,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "ACTIVE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.4,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-22448",
+			"cwe": {
+				"id": "CWE-277",
+				"name": "Insecure Inherited Permissions"
+			},
+			"title": "Insecure inherited permissions for some Intel® Simics® Package Manager software before version 1.12.0 may allow an authenticated user to potentially enable denial of service via local access.",
+			"scores": [
+				{
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H",
+						"baseScore": 6.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "ACTIVE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:L/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 6.9,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
