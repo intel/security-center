@@ -1,0 +1,140 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01388",
+			"initial_release_date": "2025-11-11T00:00:00+00:00",
+			"current_release_date": "2025-11-11T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2025-11-11T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Assistive Context-Aware Toolkit (ACAT) Software Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01388.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "A potential security vulnerability in some Assistive Context-Aware Toolkit (ACAT) software maintained by Intel may allow denial of service. Intel is releasing software updates to mitigate this potential vulnerability.\r\n"
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends updating Assistive Context-Aware Toolkit (ACAT) software to version 3.13 or later.Updates are available for download at this location:https://github.com/intel/acat/releases"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "Medium"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Denial of Service"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"Intel would like to thank &#64;sim0nsecurity for reporting this issue. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2025-27725",
+			"cwe": {
+				"id": "CWE-367",
+				"name": "Time-of-check Time-of-use race condition"
+			},
+			"title": "Time-of-check time-of-use race condition for some ACAT before version 3.13 within Ring 3: User Applications may allow a denial of service. Unprivileged software adversary with an authenticated user combined with a high complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires active user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "ACTIVE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:A/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 4.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:H",
+						"baseScore": 4.4,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}

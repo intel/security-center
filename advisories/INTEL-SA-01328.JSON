@@ -1,0 +1,691 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01328",
+			"initial_release_date": "2025-11-11T00:00:00+00:00",
+			"current_release_date": "2025-11-11T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2025-11-11T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® CIP Software Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01328.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "Potential security vulnerabilities in some Intel® Computing Improvement Program (Intel® CIP) software may allow escalation of privilege or information disclosure. Intel is releasing software updates to mitigate these potential vulnerabilities."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends updating Intel® CIP software to version WIN_DCA_2.4.0.11001 or later.Updates are available for download at this location:https://www.intel.com/content/www/us/en/download/19296/"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "High"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege, Information Disclosure"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"Intel would like to thank &#64;sim0nsecurity (CVE-2025-20050) for reporting this issue. \r\nIntel would like to thank Intel employee Dr. Avijit Mathur (CVE-2025-24848, CVE-2025-24862, CVE-2025-24299, CVE-2025-20614, CVE-2025-24834, CVE-2025-24847) for reporting these issues.  The following issues were also identified internally by Intel employees (CVE-2025-24307, CVE-2025-24516, CVE-2025-24314, CVE-2025-24838, CVE-2025-24863). Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2025-20614",
+			"cwe": {
+				"id": "CWE-73",
+				"name": "External Control of File Name or Path"
+			},
+			"title": "External control of file name or path for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (low) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 5.6,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:N",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-20050",
+			"cwe": {
+				"id": "CWE-427",
+				"name": "Uncontrolled search path"
+			},
+			"title": "Uncontrolled search path for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with an authenticated user combined with a high complexity attack may enable local code execution. This result may potentially occur via local access when attack requirements are present without special internal knowledge and requires active user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "ACTIVE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:A/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.4,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24314",
+			"cwe": {
+				"id": "CWE-284",
+				"name": "Improper access control"
+			},
+			"title": "Improper access control for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an information disclosure. Unprivileged software adversary with a privileged user combined with a high complexity attack may enable data exposure. This result may potentially occur via network access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (low), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:H/AT:P/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 2.1,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N",
+						"baseScore": 2,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24516",
+			"cwe": {
+				"id": "CWE-284",
+				"name": "Improper access control"
+			},
+			"title": "Improper access control for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an information disclosure. Unprivileged software adversary with a privileged user combined with a low complexity attack may enable data exposure. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 4.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24299",
+			"cwe": {
+				"id": "CWE-20",
+				"name": "Improper input validation"
+			},
+			"title": "Improper input validation for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with an authenticated user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via network access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 8.7,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24834",
+			"cwe": {
+				"id": "CWE-693",
+				"name": "Protection mechanism failure"
+			},
+			"title": "Protection mechanism failure for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an information disclosure. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable data exposure. This result may potentially occur via adjacent access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:P/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 6.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24847",
+			"cwe": {
+				"id": "CWE-20",
+				"name": "Improper input validation"
+			},
+			"title": "Improper input validation for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an information disclosure. Unprivileged software adversary with a privileged user combined with a low complexity attack may enable data exposure. This result may potentially occur via network access when attack requirements are present without special internal knowledge and requires passive user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "PASSIVE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:P/PR:H/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 5.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:H/I:N/A:N",
+						"baseScore": 4.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24862",
+			"cwe": {
+				"id": "CWE-434",
+				"name": "Unrestricted Upload of File with Dangerous Type"
+			},
+			"title": "Unrestricted upload of file with dangerous type for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with a privileged user combined with a high complexity attack may enable data manipulation. This result may potentially occur via network access when attack requirements are present with special internal knowledge and requires passive user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "PASSIVE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:H/AT:P/PR:H/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 2,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:N/I:L/A:N",
+						"baseScore": 2,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24838",
+			"cwe": {
+				"id": "CWE-269",
+				"name": "Improper Privilege Management"
+			},
+			"title": "Improper privilege management for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with an authenticated user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via network access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 7.7,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24307",
+			"cwe": {
+				"id": "CWE-269",
+				"name": "Improper Privilege Management"
+			},
+			"title": "Improper privilege management for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with an authenticated user combined with a high complexity attack may enable data manipulation. This result may potentially occur via network access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:H/AT:P/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 2.3,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:N/A:N",
+						"baseScore": 2,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24863",
+			"cwe": {
+				"id": "CWE-269",
+				"name": "Improper Privilege Management"
+			},
+			"title": "Improper privilege management for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an information disclosure. Unprivileged software adversary with an authenticated user combined with a low complexity attack may enable data exposure. This result may potentially occur via network access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+						"baseScore": 6.5,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24848",
+			"cwe": {
+				"id": "CWE-693",
+				"name": "Protection mechanism failure"
+			},
+			"title": "Protection mechanism failure for some Intel® CIP software before version WIN_DCA_2.4.0.11001 within Ring 3: User Applications may allow an escalation of privilege. Unprivileged software adversary with a privileged user combined with a high complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are present without special internal knowledge and requires passive user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "PASSIVE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:H/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.4,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "REQUIRED",
+						"scope": "UNCHANGED",
+						"confidentialityImpact": "HIGH",
+						"integrityImpact": "HIGH",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
+						"baseScore": 6.3,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
