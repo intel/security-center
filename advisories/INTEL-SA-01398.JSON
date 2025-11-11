@@ -1,0 +1,393 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01398",
+			"initial_release_date": "2025-11-11T00:00:00+00:00",
+			"current_release_date": "2025-11-11T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2025-11-11T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® PROSet/Wireless WiFi Software Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01398.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "Potential security vulnerabilities for some Intel® PROSet/Wireless WiFi Software may allow denial of service. Intel is releasing software updates to mitigate these potential vulnerabilities.\r\n"
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends updating Intel® PROSet/Wireless Wi-Fi software to version 23.160 or later.Updates are available for download at this location: https://www.intel.com/content/www/us/en/download/19351/intel-wireless-wi-fi-drivers-for-windows-10-and-windows-11.html"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "High"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Denial of Service"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"CVE-2025-33029, CVE-2025-35963, CVE-2025-35967, CVE-2025-30255, and CVE-2025-35971 were found internally by Intel employees. Intel would like to thank Avi Cashingad, and Anton Byshevsky.\r\nCVE-2025-24512 was found externally. Intel would like to thank Aobo Wang of Chaitin Security Research Lab for reporting this issue. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2025-35967",
+			"cwe": {
+				"id": "CWE-125",
+				"name": "Out-of-bounds read"
+			},
+			"title": "Out-of-bounds read for some Intel® PROSet/Wireless WiFi Software for Windows before version 23.160 within Ring 2: Device Drivers may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 7,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+						"baseScore": 7.4,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-24512",
+			"cwe": {
+				"id": "CWE-20",
+				"name": "Improper input validation"
+			},
+			"title": "Improper input validation for some Intel® PROSet/Wireless WiFi Software for Windows before version 23.160 within Ring 2: Device Drivers may allow a denial of service. Authorized adversary with an authenticated user combined with a high complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are present with special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (low) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "LOW",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:L",
+						"baseScore": 5.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:N/A:H",
+						"baseScore": 5.6,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-30255",
+			"cwe": {
+				"id": "CWE-787",
+				"name": "Out-of-bounds write"
+			},
+			"title": "Out-of-bounds write for some Intel® PROSet/Wireless WiFi Software for Windows before version 23.160 within Ring 2: Device Drivers may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 8.3,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:H",
+						"baseScore": 8.2,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-35971",
+			"cwe": {
+				"id": "CWE-787",
+				"name": "Out-of-bounds write"
+			},
+			"title": "Out-of-bounds write for some Intel® PROSet/Wireless WiFi Software for Windows before version 23.160 within Ring 2: Device Drivers may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 8.3,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:H",
+						"baseScore": 8.2,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-33029",
+			"cwe": {
+				"id": "CWE-787",
+				"name": "Out-of-bounds write"
+			},
+			"title": "Out-of-bounds write for some Intel® PROSet/Wireless WiFi Software for Windows before version 23.160 within Ring 2: Device Drivers may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 8.3,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+						"baseScore": 7.4,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2025-35963",
+			"cwe": {
+				"id": "CWE-691",
+				"name": "Insufficient control flow management"
+			},
+			"title": "Insufficient control flow management for some Intel® PROSet/Wireless WiFi Software for Windows before version 23.160 within Ring 2: Device Drivers may allow a denial of service. Unprivileged software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:H",
+						"baseScore": 8.3,
+						"baseSeverity": "HIGH"
+					},
+					"cvss_v3": {
+						"attackVector": "ADJACENT_NETWORK",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "NONE",
+						"integrityImpact": "NONE",
+						"availabilityImpact": "HIGH",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+						"baseScore": 7.4,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
