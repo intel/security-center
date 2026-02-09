@@ -1,0 +1,139 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01396",
+			"initial_release_date": "2026-02-10T00:00:00+00:00",
+			"current_release_date": "2026-02-10T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2026-02-10T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "2026.1 IPU, Intel® Processor Firmware Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01396.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "A potential security vulnerability in some  Intel® Processors may allow escalation of privilege. Intel is releasing microcode updates to mitigate this potential vulnerability."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends that users of affected processors update the latest version of firmware provided by the system manufacturer that addresses this issue. \r\nIntel has released microcode updates for the affected processors that are currently supported on the public github repository as listed below. \r\nRelated Content:\r\nPlease see details below on access to the microcode: Public Github:  https://github.com/intel/Intel-Linux-Processor-Microcode-Data-FilesMicrocode loading points:  https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/secure-coding/loading-microcode-os.html"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "Low"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Hardware"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"Intel would like to thank Sergiu Ghetie, the CEO of Cloud Tank Inc., for reporting this issue. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2025-31648",
+			"cwe": {
+				"id": "CWE-229",
+				"name": "Improper Handling of Values"
+			},
+			"title": "Improper handling of values in the microcode flow for some Intel® Processor Family may allow an escalation of privilege. Startup code and smm adversary with a privileged user combined with a high complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are present with special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (low), integrity (low) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (low), integrity (low) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "LOW",
+						"subIntegrityImpact": "LOW",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:H/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N",
+						"baseScore": 1.8,
+						"baseSeverity": "LOW"
+					},
+					"cvss_v3": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"scope": "CHANGED",
+						"confidentialityImpact": "LOW",
+						"integrityImpact": "LOW",
+						"availabilityImpact": "NONE",
+						"version": "3.1",
+						"vectorString": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:N",
+						"baseScore": 3.9,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
