@@ -1,0 +1,1195 @@
+{
+	"__comment__": "This content is licensed under the Creative Commons Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/). If you distribute this content you must provide attribution to Intel Corporation and provide a link to the original.",
+	"document": {
+		"category": "csaf_security_advisory",
+		"csaf_version": "2.0",
+		"distribution": {
+			"text": "Copyright © Intel Corporation All rights reserved.",
+			"tlp": {
+				"label": "WHITE",
+				"url": "https://www.first.org/tlp/"
+			}
+		},
+		"lang": "en",
+		"publisher": {
+			"category": "vendor",
+			"contact_details": "secure@intel.com",
+			"issuing_authority": "Intel Corporation is responsible for vulnerability handling across all Intel offerings.",
+			"name": "Intel Corporation",
+			"namespace": "https://www.intel.com"
+		},
+		"tracking": {
+			"id": "INTEL-SA-01580",
+			"initial_release_date": "2026-11-10T00:00:00+00:00",
+			"current_release_date": "2026-11-10T00:00:00+00:00",
+			"revision_history": [
+				{
+					"date": "2026-11-10T00:00:00+00:00",
+					"number": "1.0.0",
+					"summary": "Initial release"
+				}
+			],
+			"status": "final",
+			"version": "1.0.0"
+		},
+		"title": "Intel® TDX Migration Trust Domain (MigTD) Advisory",
+		"references": [
+			{
+				"summary": "Security Center",
+				"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01580.html"
+			}
+		],
+		"notes": [
+			{
+				"title": "Summary",
+				"category": "summary",
+				"text": "Potential security vulnerabilities for the Intel® TDX Migration Trust Domain (MigTD) may allow escalation of privilege, information disclosure or denial of service. Intel is releasing reference software updates to mitigate these potential vulnerabilities."
+			},
+			{
+				"title": "Legal Notices and Disclaimers",
+				"category": "legal_disclaimer",
+				"text": "Intel provides these materials as-is, with no express or implied warranties.\\r\\nAll products, dates, and figures specified are preliminary based on current expectations, and are subject to change without notice. \\r\\nIntel products and services described may contain design defects or errors known as errata, which may cause the product to deviate from published specifications. Current characterized errata are available on request.\\r\\nIntel products that have met their End of Servicing Updates may no longer receive functional and security updates. For additional details on support and servicing, please see this help article. (https://www.intel.com/content/www/us/en/support/articles/000022396/processors.html)\\r\\nIntel technologies' features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No product or component can be absolutely secure. Check with your system manufacturer or retailer or learn more at http://intel.com.(http://intel.com) \\r\\nSome results have been estimated or simulated using internal Intel analysis or architecture simulation or modeling, and provided to you for informational purposes. Any differences in your system hardware, software or configuration may affect your actual performance. \\r\\nIntel and the Intel logo are trademarks of Intel Corporation or its subsidiaries in the United States and other countries. \\r\\n© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others."
+			},
+			{
+				"title": "Recommendation",
+				"category": "details",
+				"text": "Intel recommends updating Intel TDX Migration Trust Domain (MigTD) to version 0.7.2 or later.\r\nUpdates are available for download at this location: GitHub Release v0.7.2"
+			},
+			{
+				"title": "Severity rating",
+				"category": "details",
+				"text": "Low"
+			},
+			{
+				"title": "Advisory Category",
+				"category": "details",
+				"text": "Software"
+			},
+			{
+				"title": "Impact of vulnerability",
+				"category": "details",
+				"text": "Escalation of Privilege, Denial of Service, Information Disclosure"
+			},
+			{
+				"title": "Contact",
+				"category": "details",
+				"text": "Contact Intel PSIRT at mailto:secure@intel.com with any questions, requests for technical details, or proposed coordination with other parties. Please encrypt any sensitive details using our PGP key, which can be found at https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html."
+			}
+		],
+		"acknowledgments": [
+			{
+				"names": [
+					"Intel would like to thank vic5589 via Intigriti for reporting CVE-2026-61467.\r\nThe remaining issues were found internally by Intel employees. Intel, and nearly the entire technology industry, follows a disclosure practice called Coordinated Disclosure, under which a cybersecurity vulnerability is generally publicly disclosed only after mitigations are available."
+				]
+			}
+		]
+	},
+	"vulnerabilities": [
+		{
+			"cve": "CVE-2026-61887",
+			"cwe": {
+				"id": "CWE-304",
+				"name": "Missing Critical Step in Authentication"
+			},
+			"title": "Missing critical step in authentication in the MigTD SPDM rebind implementation for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege and information disclosure. Network adversary with an unauthenticated user combined with a low complexity attack may enable remote code execution. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (high), integrity (high) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "HIGH",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.4,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61383",
+			"cwe": {
+				"id": "CWE-131",
+				"name": "Incorrect Calculation of Buffer Size"
+			},
+			"title": "Incorrect calculation of buffer size in the MigTD's servtd_get_quote for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with an unauthenticated user combined with a high complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 2,
+						"baseSeverity": "LOW"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60071",
+			"cwe": {
+				"id": "CWE-1284",
+				"name": "Improper Validation of Specified Quantity in Input"
+			},
+			"title": "Improper validation of specified quantity in input in the MigTD vsock packet handling for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with a privileged user combined with a low complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60139",
+			"cwe": {
+				"id": "CWE-707",
+				"name": "Improper neutralization"
+			},
+			"title": "Improper neutralization in the MigTD SPDM transport for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 6,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-62930",
+			"cwe": {
+				"id": "CWE-252",
+				"name": "Unchecked return value"
+			},
+			"title": "Unchecked return value in the MigTD's TLS implementation for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.3,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60020",
+			"cwe": {
+				"id": "CWE-401",
+				"name": "Missing Release of Memory after Effective Lifetime"
+			},
+			"title": "Missing release of memory after effective lifetime in the MigTD virtio-serial driver for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with a privileged user combined with a low complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 4.6,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61467",
+			"cwe": {
+				"id": "CWE-416",
+				"name": "Use after free"
+			},
+			"title": "Use after free in the MigTD virtio driver for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable data corruption. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (high) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:H/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 6.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-62275",
+			"cwe": {
+				"id": "CWE-390",
+				"name": "Detection of Error Condition Without Action"
+			},
+			"title": "Detection of error condition without action in the MigTD's vmcall_raw transport for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable data corruption. This result may potentially occur via local access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (high) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 5.6,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61470",
+			"cwe": {
+				"id": "CWE-664",
+				"name": "Improper Control of a Resource Through its Lifetime"
+			},
+			"title": "Improper control of a resource through its lifetime in the MigTD's TLS client for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable data corruption. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.3,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60059",
+			"cwe": {
+				"id": "CWE-908",
+				"name": "Use of Uninitialized Resource"
+			},
+			"title": "Use of uninitialized resource in the MigTD memory for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an information disclosure. Network adversary with a privileged user combined with a low complexity attack may enable data exposure. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (low), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "LOW",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 4.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60138",
+			"cwe": {
+				"id": "CWE-823",
+				"name": "Use of Out-of-range Pointer Offset"
+			},
+			"title": "Use of out-of-range pointer offset in the MigTD's virtio-vsock implementation for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 8.4,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-56432",
+			"cwe": {
+				"id": "CWE-441",
+				"name": "Unintended Proxy or Intermediary ('Confused Deputy')"
+			},
+			"title": "Unintended proxy or intermediary ('confused deputy') in the MigTD signing for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (high) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (high), integrity (high) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "HIGH",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:H/VA:N/SC:H/SI:H/SA:N",
+						"baseScore": 8.2,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-44685",
+			"cwe": {
+				"id": "CWE-290",
+				"name": "Authentication Bypass by Spoofing"
+			},
+			"title": "Authentication bypass by spoofing in the MigTD rebinding protocol for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable local code execution. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (high), integrity (high) and availability (high) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "HIGH",
+						"subAvailabilityImpact": "HIGH",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+						"baseScore": 9.3,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-63027",
+			"cwe": {
+				"id": "CWE-696",
+				"name": "Incorrect behavior order"
+			},
+			"title": "Incorrect behavior order in the get_tcb_level_by_svn for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. Network adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.3,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-57890",
+			"cwe": {
+				"id": "CWE-460",
+				"name": "Improper Cleanup on Thrown Exception"
+			},
+			"title": "Improper cleanup on thrown exception in the MigTD's SPDM responder for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an information disclosure. Network adversary with an unauthenticated user combined with a low complexity attack may enable data exposure. This result may potentially occur via network access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "NETWORK",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 8.7,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-63028",
+			"cwe": {
+				"id": "CWE-665",
+				"name": "Improper initialization"
+			},
+			"title": "Improper initialization in the MigTD virtio-vsock stream handling for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with an unauthenticated user combined with a low complexity attack may enable data corruption. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61377",
+			"cwe": {
+				"id": "CWE-226",
+				"name": "Sensitive information uncleared in resource before release for reuse"
+			},
+			"title": "Sensitive information uncleared in resource before release for reuse in the MigTD for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an information disclosure. System software adversary with a privileged user combined with a high complexity attack may enable data exposure. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (high), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:N/PR:H/UI:N/VC:H/VI:N/VA:N/SC:H/SI:N/SA:N",
+						"baseScore": 6.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-62920",
+			"cwe": {
+				"id": "CWE-252",
+				"name": "Unchecked return value"
+			},
+			"title": "Unchecked return value in the MigTD error handling for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with a privileged user combined with a low complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60142",
+			"cwe": {
+				"id": "CWE-123",
+				"name": "Write-what-where Condition"
+			},
+			"title": "Write-what-where condition in the MigTD for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an information disclosure and escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 8.4,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61473",
+			"cwe": {
+				"id": "CWE-294",
+				"name": "Authentication bypass by capture-replay"
+			},
+			"title": "Authentication bypass by capture-replay in the MigTD for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (high), integrity (high) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "HIGH",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
+						"baseScore": 9.2,
+						"baseSeverity": "CRITICAL"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-56759",
+			"cwe": {
+				"id": "CWE-20",
+				"name": "Improper input validation"
+			},
+			"title": "Improper input validation in the MigTD PCI BAR handling for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable data corruption. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (high) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-57893",
+			"cwe": {
+				"id": "CWE-372",
+				"name": "Incomplete Internal State Distinction"
+			},
+			"title": "Incomplete internal state distinction in the MigTD's SPDM responder for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. System software adversary with a privileged user combined with a low complexity attack may enable data corruption. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (high) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:L/AT:N/PR:H/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-60133",
+			"cwe": {
+				"id": "CWE-190",
+				"name": "Integer overflow"
+			},
+			"title": "Integer overflow in the MigTD vsock for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. Unprivileged software adversary with an authenticated user combined with a high complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "LOW",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:H/AT:N/PR:L/UI:N/VC:N/VI:L/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.8,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-49036",
+			"cwe": {
+				"id": "CWE-367",
+				"name": "Time-of-check Time-of-use race condition"
+			},
+			"title": "Time-of-check time-of-use race condition in the MigTD shared memory for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with a privileged user combined with a low complexity attack may enable data corruption. This result may potentially occur via local access when attack requirements are present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:P/PR:H/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 5.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-57892",
+			"cwe": {
+				"id": "CWE-1220",
+				"name": "Insufficient Granularity of Access Control"
+			},
+			"title": "Insufficient granularity of access control in the MigTD v2 policy evaluation engine for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege. Network adversary with an unauthenticated user combined with a high complexity attack may enable escalation of privilege. This result may potentially occur via adjacent access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (high), integrity (high) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "ADJACENT",
+						"attackComplexity": "HIGH",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "HIGH",
+						"subIntegrityImpact": "HIGH",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:A/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
+						"baseScore": 8.8,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-62929",
+			"cwe": {
+				"id": "CWE-825",
+				"name": "Expired Pointer Dereference"
+			},
+			"title": "Expired pointer dereference in the MigTD's virtio-vsock implementation for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an escalation of privilege and information disclosure. System software adversary with a privileged user combined with a low complexity attack may enable escalation of privilege. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (high) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "HIGH",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 8.4,
+						"baseSeverity": "HIGH"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61468",
+			"cwe": {
+				"id": "CWE-269",
+				"name": "Improper Privilege Management"
+			},
+			"title": "Improper privilege management in the MigTD logging for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow an information disclosure. System software adversary with a privileged user combined with a low complexity attack may enable data exposure. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (high), integrity (none) and availability (none) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "HIGH",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "NONE",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-61469",
+			"cwe": {
+				"id": "CWE-193",
+				"name": "Off-by-one Error"
+			},
+			"title": "Off-by-one error in the MigTD's vmcall_raw transport for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with an unauthenticated user combined with a low complexity attack may enable data corruption. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (low) and availability (low) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "LOW",
+						"vulnAvailabilityImpact": "LOW",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N",
+						"baseScore": 5.1,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-59771",
+			"cwe": {
+				"id": "CWE-129",
+				"name": "Improper Validation of Array Index"
+			},
+			"title": "Improper validation of array index in the MigTD's virtio-serial driver for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with a privileged user combined with a low complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "HIGH",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 6.7,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		},
+		{
+			"cve": "CVE-2026-55709",
+			"cwe": {
+				"id": "CWE-835",
+				"name": "Loop with Unreachable Exit Condition ('Infinite Loop')"
+			},
+			"title": "Loop with unreachable exit condition ('infinite loop') in the MigTD's GetQuote for the Intel® TDX Migration Trust Domain (MigTD) within Ring 0: Hypervisor may allow a denial of service. System software adversary with an unauthenticated user combined with a low complexity attack may enable denial of service. This result may potentially occur via local access when attack requirements are not present without special internal knowledge and requires no user interaction. The potential vulnerability may impact the confidentiality (none), integrity (none) and availability (high) of the vulnerable system, resulting in subsequent system confidentiality (none), integrity (none) and availability (none) impacts.",
+			"scores": [
+				{
+					"cvss_v4": {
+						"attackVector": "LOCAL",
+						"attackComplexity": "LOW",
+						"attackRequirements": "NONE",
+						"privilegesRequired": "NONE",
+						"userInteraction": "NONE",
+						"vulnConfidentialityImpact": "NONE",
+						"vulnIntegrityImpact": "NONE",
+						"vulnAvailabilityImpact": "HIGH",
+						"subConfidentialityImpact": "NONE",
+						"subIntegrityImpact": "NONE",
+						"subAvailabilityImpact": "NONE",
+						"version": "4.0",
+						"vectorString": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+						"baseScore": 6.9,
+						"baseSeverity": "MEDIUM"
+					},
+					"products": [
+						"See reference."
+					]
+				}
+			],
+			"product_status": {
+				"known_affected": [
+					"See reference."
+				]
+			}
+		}
+	]
+}
